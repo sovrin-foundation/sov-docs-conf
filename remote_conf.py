@@ -23,12 +23,7 @@ def write_if_changed(fname, contents):
             fp.write(contents)
 
 
-def write_page_title(title):
-    lines.append(title)
-    header_bar = '='
-    for i in range(0,len(title)):
-       headerbar.append('=') 
-    lines.append(header)
+
 
 def generate_sidebar(conf, conf_api):
     # determine 'latest' or 'stable'
@@ -66,10 +61,20 @@ def generate_sidebar(conf, conf_api):
     def write_link(desc, link):
         lines.append('    %s <%s>' % (desc, link))
 
+    def write_page_title(title):
+        lines.append(title)
+        header_bar = '='
+        for i in range(0,len(title)):
+        headerbar.append('=') 
+        lines.append(header)
+
+
     write_page_title('Sovrin')
-# Begin creating sidebar
+  
+    # Begin creating sidebar
     toctree('Sovrin', 2)
     write_local_page('Introduction', 'index')
+    write_local_page('Build Script')
     toctree('Sovrin Repositories', 2)
     write_subproject('connector-app', 'Connector App', 'index')
     toctree('External Documentation')
