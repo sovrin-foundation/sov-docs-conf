@@ -1,8 +1,8 @@
 # DON'T MOVE ME, OTHER REPO'S READTHEDOCS BUILDS DEPEND ON ME STAYING IN THIS DIRECTORY
 #
-# This file was written to build a shared readthedocs sidebar on the indy.readthedocs.io website. 
+# This file was written to build a shared readthedocs sidebar on the sovrin.readthedocs.io website. 
 # 
-# In each of the indy-* repo's docs folers, there exists a conf.py to be used when building documenation 
+# In each of the sovrin repo's docs folders, there exists a conf.py to be used when building documenation 
 # with sphinx. When our docs are build with readthedocs, the conf.py executes. There are a couple of lines 
 # in the conf.py that will clone and use this file to generate a shared sidebar that includes all of the repos
 # listed below on the readthedocs website. 
@@ -23,7 +23,6 @@ def write_if_changed(fname, contents):
             fp.write(contents)
 
 def generate_sidebar(conf, conf_api):
-    
     # determine 'latest' or 'stable'
     # if not conf.do_gen:
     do_gen = os.environ.get('SIDEBAR', None) == '1' or conf['on_rtd']
@@ -64,11 +63,8 @@ def generate_sidebar(conf, conf_api):
 # Begin creating sidebar
     toctree('Sovrin', 2)
     write_local_page('Introduction', 'index')
-
-    
     toctree('Repositories', 2)
-    write_subproject('Connector App', 'connector-app')
-    
+    write_subproject('Connector App', 'connector-app', 'index')
     write_link('Hyperledger Indy', 'https://indy.readthedocs.io')
     endl()
 
@@ -83,3 +79,5 @@ def get_intersphinx_mapping(version):
         'indy-plenum': ('http://indy-plenum.readthedocs.io/en/%s' % version, None),
         'indy-hipe': ('http://hipe.readthedocs.io/en/%s' % version, None),
     }
+
+generate_sidebar()
