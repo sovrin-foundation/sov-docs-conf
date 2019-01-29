@@ -57,14 +57,15 @@ def generate_sidebar(conf, conf_api):
             lines.append('    %s <%s>' % (desc, link))
     
     def write_link(desc, link):
-        lines.append('    %s <%s>')
+        lines.append('    %s <%s>' % (desc, link))
 
 
 # Begin creating sidebar
     toctree('Sovrin', 2)
     write_local_page('Introduction', 'index')
     toctree('Repositories', 2)
-    write_subproject('Connector App', 'connector-app', 'index')
+    write_subproject('connector-app', 'Connector App', 'index')
+
     write_link('Hyperledger Indy', 'https://indy.readthedocs.io')
     endl()
 
