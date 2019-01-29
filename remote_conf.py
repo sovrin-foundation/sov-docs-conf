@@ -79,5 +79,3 @@ def get_intersphinx_mapping(version):
         'indy-plenum': ('http://indy-plenum.readthedocs.io/en/%s' % version, None),
         'indy-hipe': ('http://hipe.readthedocs.io/en/%s' % version, None),
     }
-
-generate_sidebar()
