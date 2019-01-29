@@ -65,7 +65,7 @@ def generate_sidebar(conf, conf_api):
         lines.append(title)
         header_bar = '='
         for i in range(0,len(title)):
-            headerbar.append('=') 
+            header_bar.append('=') 
         lines.append(header)
 
 
@@ -74,7 +74,9 @@ def generate_sidebar(conf, conf_api):
     # Begin creating sidebar
     toctree('Sovrin', 2)
     write_local_page('Introduction', 'index')
-    write_local_page('Build Script')
+    write_local_page('Build Script', 'build-scripts/ubuntu-1604/README')
+    write_local_page('Release Notes', 'release-notes')
+    
     toctree('Sovrin Repositories', 2)
     write_subproject('connector-app', 'Connector App', 'index')
     toctree('External Documentation')
