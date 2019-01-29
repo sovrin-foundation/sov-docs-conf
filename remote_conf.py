@@ -66,7 +66,7 @@ def generate_sidebar(conf, conf_api):
         header_bar = '='
         for i in range(0,len(title)):
             header_bar += '=' 
-        lines.append(header)
+        lines.append(header_bar)
 
 
     write_page_title('Sovrin')
