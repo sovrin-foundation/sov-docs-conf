@@ -47,14 +47,14 @@ def generate_sidebar(conf, conf_api):
         if conf_api == 'sovrin':
             args = desc,  link
         else:
-            args = desc, 'https://sovrin.readthedocs.io/en/%s/%s.html' % (version, link)
+            args = desc, 'https://sovrin-foundation.readthedocs.io/en/%s/%s.html' % (version, link)
             
         lines.append('    %s <%s>' % args)
 
     def write_subproject(project, desc, link):
         if project != conf_api:
             args = desc, project, version, link
-            lines.append('    %s <https://sovrin.readthedocs.io/projects/%s/en/%s/%s.html>' % args)
+            lines.append('    %s <https://sovrin-foundation.readthedocs.io/projects/%s/en/%s/%s.html>' % args)
         else:
             lines.append('    %s <%s>' % (desc, link))
     
