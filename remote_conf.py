@@ -80,7 +80,7 @@ def generate_sidebar(conf, conf_api):
     toctree('Sovrin Repositories', 2)
     write_subproject('connector-app', 'Connector App', 'index')
     toctree('External Documentation', 1)
-    write_link('Hyperledger Indy', 'https://indy.readthedocs.io')
+    write_link('Hyperledger Indy', 'https://hyperledger-indy.readthedocs.io')
     endl()
 
     write_if_changed('toc.rst', '\n'.join(lines))
